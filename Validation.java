@@ -41,7 +41,7 @@ public class Validation {
                     "Invalid last name. last name should start with a capital letter and have a minimum of 3 characters.");
         }
 
-        //uc3
+        // uc3
         System.out.println("Enter email: ");
         String email = sc.nextLine();
         regex = "^[a-zA-Z0-9]+([._]+[a-zA-Z0-9]+)*@[a-zA-Z]+(\\.[a-zA-Z]{2,})+(\\.[a-zA-Z]{2,})*$";
@@ -55,7 +55,7 @@ public class Validation {
                     "Invalid email.");
         }
 
-        //uc4
+        // uc4
         System.out.println("Enter mobile number: ");
         String mobile = sc.nextLine();
 
@@ -70,11 +70,11 @@ public class Validation {
                     "Invalid mobile number.");
         }
 
-        //uc5
+        // uc5,6
         System.out.println("Enter password: ");
         String password = sc.nextLine();
 
-        regex = "^.{8,}$";
+        regex = "^(?=.*[A-Z]).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(password);
 
@@ -84,18 +84,6 @@ public class Validation {
             System.out.println(
                     "Invalid password.");
         }
-
-
-
-
-
-
-
-      
-
-
-
-
 
         sc.close();
 
