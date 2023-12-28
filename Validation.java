@@ -70,6 +70,30 @@ public class Validation {
                     "Invalid mobile number.");
         }
 
+        //uc5
+        System.out.println("Enter password: ");
+        String password = sc.nextLine();
+
+        regex = "^.{8,}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(password);
+
+        if (matcher.matches()) {
+            System.out.println("Valid password.");
+        } else {
+            System.out.println(
+                    "Invalid password.");
+        }
+
+
+
+
+
+
+
+      
+
+
 
 
 
