@@ -70,11 +70,13 @@ public class Validation {
                     "Invalid mobile number.");
         }
 
-        // uc5,6,7
+        // uc5,6,7,8
+        // (minimum 8 characters, at least one uppercase letter, at least one numeric
+        // digit, and exactly one special character)
         System.out.println("Enter password: ");
         String password = sc.nextLine();
 
-        regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
+        regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()-_+=]).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(password);
 
