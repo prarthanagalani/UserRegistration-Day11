@@ -44,7 +44,7 @@ public class Validation {
         //uc3
         System.out.println("Enter email: ");
         String email = sc.nextLine();
-        regex = "^[a-zA-Z0-9]+([._+-]+[a-zA-Z0-9]+)*@[a-zA-Z]+(\\.[a-zA-Z]{2,})+(\\.[a-zA-Z]{2,})*$";
+        regex = "^[a-zA-Z0-9]+([._+-]+[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\\.[a-zA-Z]{2,})+(\\.[a-zA-Z]{2,})*$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(email);
 
