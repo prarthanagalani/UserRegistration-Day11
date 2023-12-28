@@ -70,11 +70,11 @@ public class Validation {
                     "Invalid mobile number.");
         }
 
-        // uc5,6
+        // uc5,6,7
         System.out.println("Enter password: ");
         String password = sc.nextLine();
 
-        regex = "^(?=.*[A-Z]).{8,}$";
+        regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(password);
 
