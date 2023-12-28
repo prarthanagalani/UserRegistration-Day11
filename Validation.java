@@ -1,7 +1,34 @@
-public class Validation{
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-    public static void main(String[] args)
-    {
+public class Validation {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         
+        // uc1
+        System.out.println("Enter first name: ");
+        String firstname = sc.nextLine();
+
+        // define regex for validate first name
+        String regex = "^[A-Z][a-z]{2,}$";
+
+        // create pattern object
+        Pattern pattern = Pattern.compile(regex);
+
+        // create Matcher object
+        Matcher matcher = pattern.matcher(firstname);
+
+        // Check if the entered first name matches the pattern
+        if (matcher.matches()) {
+            System.out.println("Valid first name.");
+        } else {
+            System.out.println(
+                    "Invalid first name. First name should start with a capital letter and have a minimum of 3 characters.");
+        }
+
+        sc.close();
+
     }
 }
