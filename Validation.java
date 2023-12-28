@@ -55,6 +55,23 @@ public class Validation {
                     "Invalid email.");
         }
 
+        //uc4
+        System.out.println("Enter mobile number: ");
+        String mobile = sc.nextLine();
+
+        regex = "^91\\s\\d{10}$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(mobile);
+
+        if (matcher.matches()) {
+            System.out.println("Valid mobile number.");
+        } else {
+            System.out.println(
+                    "Invalid mobile number.");
+        }
+
+
+
 
         sc.close();
 
