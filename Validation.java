@@ -6,7 +6,7 @@ public class Validation {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         // uc1
         System.out.println("Enter first name: ");
         String firstname = sc.nextLine();
@@ -27,6 +27,34 @@ public class Validation {
             System.out.println(
                     "Invalid first name. First name should start with a capital letter and have a minimum of 3 characters.");
         }
+
+        // uc2
+        System.out.println("Enter last name: ");
+        String lastname = sc.nextLine();
+
+        matcher = pattern.matcher(lastname);
+
+        if (matcher.matches()) {
+            System.out.println("Valid last name.");
+        } else {
+            System.out.println(
+                    "Invalid last name. last name should start with a capital letter and have a minimum of 3 characters.");
+        }
+
+        //uc3
+        System.out.println("Enter email: ");
+        String email = sc.nextLine();
+        regex = "^[a-zA-Z0-9]+([._]+[a-zA-Z0-9]+)*@[a-zA-Z]+(\\.[a-zA-Z]{2,})+(\\.[a-zA-Z]{2,})*$";
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(email);
+
+        if (matcher.matches()) {
+            System.out.println("Valid email.");
+        } else {
+            System.out.println(
+                    "Invalid email.");
+        }
+
 
         sc.close();
 
