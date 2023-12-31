@@ -44,4 +44,44 @@ public class ValidationTest {
         Assert.assertFalse(u.emailvalidate(invalidEmail));
     }
 
+    @Test
+    public void FirstnameValidateHappy() {
+        Assert.assertTrue(u.namevalidate("Prarthana"));
+    }
+
+    @Test
+    public void FirstnameValidateSad() {
+        Assert.assertFalse(u.namevalidate("prarthana"));
+    }
+
+    @Test
+    public void LastnameValidateHappy() {
+        Assert.assertTrue(u.namevalidate("Galani"));
+    }
+
+    @Test
+    public void LastnameValidateSad() {
+        Assert.assertFalse(u.namevalidate("Galani01"));
+    }
+
+    @Test
+    public void mobilevalidateHappy() {
+        Assert.assertTrue(u.mobilevalidate("91 9313935733"));
+    }
+
+    @Test
+    public void mobilevalidateSad() {
+        Assert.assertFalse(u.mobilevalidate("9313935733"));
+    }
+
+    @Test
+    public void passwordvalidateHappy() {
+        Assert.assertTrue(u.passwordvalidate("Prar@na123"));
+    }
+
+    @Test
+    public void passwordvalidateSad() {
+        Assert.assertFalse(u.passwordvalidate("Prar@@@@@"));
+    }
+
 }
