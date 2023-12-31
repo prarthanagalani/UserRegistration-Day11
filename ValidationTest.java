@@ -65,13 +65,23 @@ public class ValidationTest {
     }
 
     @Test
-    public void MobilevalidateHappy() {
+    public void mobilevalidateHappy() {
         Assert.assertTrue(u.mobilevalidate("91 9313935733"));
     }
 
     @Test
-    public void MobilevalidateSad() {
+    public void mobilevalidateSad() {
         Assert.assertFalse(u.mobilevalidate("9313935733"));
+    }
+
+    @Test
+    public void passwordvalidateHappy() {
+        Assert.assertTrue(u.passwordvalidate("Prar@na123"));
+    }
+
+    @Test
+    public void passwordvalidateSad() {
+        Assert.assertFalse(u.passwordvalidate("Prar@@@@@"));
     }
 
 }
