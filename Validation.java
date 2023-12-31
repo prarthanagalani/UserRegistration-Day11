@@ -76,7 +76,7 @@ public class Validation {
         System.out.println("Enter password: ");
         String password = sc.nextLine();
 
-        regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()-_+=]).{8,}$";
+        regex = "^(?=.*[A-Z])(?=.*\\d)[a-zA-Z0-9]*[!@#$%^&*()_=+-][a-zA-Z0-9]*{7,}$";
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(password);
 
