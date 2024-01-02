@@ -1,4 +1,8 @@
 
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -82,6 +86,20 @@ public class ValidationTest {
     @Test
     public void passwordvalidateSad() {
         Assert.assertFalse(u.passwordvalidate("Prar@@@@@"));
+    }
+
+    @Test
+    public void testInvalidUserDetails() {
+        user u = new user("Invalid", "User", "invalid@email", "123", "weakpassword");
+
+        try {
+            u.check();
+            // If check() does not throw an exception, fail the test
+            fail();
+        } catch (InvalidUserException e) {
+
+            assertTrue(true);
+        }
     }
 
 }

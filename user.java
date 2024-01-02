@@ -15,35 +15,35 @@ public class user {
 
     }
 
-    public void check() {
+    public void check() throws InvalidUserException {
         if (namevalidate(firstname)) {
             System.out.println("Valid first name.");
         } else {
-            System.out.println("Invalid first name.");
+            throw new InvalidUserException("Invalid first name.");
         }
 
         if (namevalidate(lastname)) {
             System.out.println("Valid last name.");
         } else {
-            System.out.println("Invalid last name.");
+            throw new InvalidUserException("Invalid last name name.");
         }
 
         if (emailvalidate(email)) {
             System.out.println("Valid email.");
         } else {
-            System.out.println("Invalid email.");
+            throw new InvalidUserException("Invalid email.");
         }
 
         if (mobilevalidate(mobile)) {
             System.out.println("Valid mobile number.");
         } else {
-            System.out.println("Invalid mobile number.");
+            throw new InvalidUserException("Invalid mobile number.");
         }
 
         if (passwordvalidate(password)) {
             System.out.println("Valid password.");
         } else {
-            System.out.println("Invalid password.");
+            throw new InvalidUserException("Invalid password.");
         }
 
     }
